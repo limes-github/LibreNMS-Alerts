@@ -42,7 +42,7 @@
 </ul>
 <p><span style="background-color: #ff0000;">11. IPTV SERVICE DOWN (MULTICAST TRAFFIC &lt; 55000 pkt/s)</span></p>
 <ul>
-<li>macros.port_up = 1 AND macros.port = 1 AND ports_statistics.ifInNUcastPkts_rate &lt;= 55000 AND ports.ifName = "Peering: to_IPTV"</li>
+<li>macros.port_up = 1 AND macros.port = 1 AND ports_statistics.ifInNUcastPkts_rate <= 140000 AND ports.ifIndex = "1/0/13"</li>
 </ul>
 <p><span style="background-color: #ff0000;">12. INTERFACE ERRORS</span></p>
 <ul>
