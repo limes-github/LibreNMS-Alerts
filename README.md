@@ -55,8 +55,6 @@
 <p><span style="background-color: #ff0000;">14. TEMPERATURE &gt; 70 CELSIUS</span></p>
 <ul>
 <li>sensors.sensor_class = "Temperature" AND sensors.sensor_current &gt;= 70</li>
-
-
-select count(ports_fdb.mac_address) from ports_fdb join vlans on ports_fdb.vlan_id = vlans.vlan_id where vlans.vlan_vlan = 3333 HAVING count(ports_fdb.mac_address) > 10;
-
+<p><span style="background-color: #ff0000;">15. SQL ALERTING &gt; FDB ENTRIES > 10 FOR SPECIFIED VLAN</span></p>
+<li>select count(ports_fdb.mac_address) from ports_fdb join vlans on ports_fdb.vlan_id = vlans.vlan_id where vlans.vlan_vlan = 3333 HAVING count(ports_fdb.mac_address) > 10;</li>
 </ul>
