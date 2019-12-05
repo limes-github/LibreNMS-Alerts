@@ -60,3 +60,7 @@
 <ul>
 <li>select count(ports_fdb.mac_address) from ports_fdb join vlans on ports_fdb.vlan_id = vlans.vlan_id where vlans.vlan_vlan = 3333 HAVING count(ports_fdb.mac_address) > 10;</li>
 </ul>
+<p><span style="background-color: #ff0000;">15. SQL ALERTING &gt; FDB ENTRIES > 10 FOR SPECIFIED VLAN (WITHIN A TIME)</span></p>
+<ul>
+<li>select UNIX_TIMESTAMP(ports_fdb.updated_at), ports_fdb.mac_address from ports_fdb join vlans on ports_fdb.vlan_id = vlans.vlan_id where vlans.vlan_vlan = 3333 AND UNIX_TIMESTAMP(ports_fdb.updated_at) >= UNIX_TIMESTAMP(NOW() - INTERVAL 15 MINUTE);
+</li>
